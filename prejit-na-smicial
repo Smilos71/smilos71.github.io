@@ -1,0 +1,5 @@
+<title>Přejít na Smicial?</title)
+<br>
+<br>
+<br>
+<button onclick="window.location.href='http://smicial.wz.cz/'">Přejít na Smicial</button>
