@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kámen, nůžky, papír</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    h1 {
+        color: #333;
+    }
+    #choices {
+        margin-top: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 0 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        background-color: #fcbf49;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #f57c00;
+    }
+</style>
+</head>
+<body>
+
+<h1>Vyber si:</h1>
+
+<div id="choices">
+    <button onclick="playGame('rock')">Kámen</button>
+    <button onclick="playGame('paper')">Papír</button>
+    <button onclick="playGame('scissors')">Nůžky</button>
+</div>
+
+<p id="result"></p>
+
+<script>
+function playGame(playerChoice) {
+    const choices = ['rock', 'paper', 'scissors'];
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+    let result;
+
+    if (playerChoice === computerChoice) {
+        result = 'Remíza!';
+    } else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
+               (playerChoice === 'paper' && computerChoice === 'rock') ||
+               (playerChoice === 'scissors' && computerChoice === 'paper')) {
+        result = 'Vyhrál jsi!';
+    } else {
+        result = 'Počítač vyhrál!';
+    }
+
+    document.getElementById('result').innerText = `Hráč: ${playerChoice}, Počítač: ${computerChoice}. ${result}`;
+}
+</script>
+
+</body>
+</html>
