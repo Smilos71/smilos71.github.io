@@ -1,20 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smilosův web!</title>
-<h1>Vítám tě na mém webu!</h1>
-<br>
-<br>Ahoj já jsem Smilos a jsem YouTuber!
-<br>Jsem majitelem sociální sítě Smicial!
+<style>
+    body {
+        font-family: Segoe UI, sans-serif;
+        background-color: #f3f3f3;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .header h1 {
+        color: #333;
+    }
+    .content {
+        padding: 20px 0;
+        text-align: center;
+    }
+    .footer {
+        text-align: center;
+        padding: 20px 0;
+        background-color: #333;
+        color: #fff;
+    }
+    button {
+        padding: 15px 40px;
+        margin: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        background-color: #fcbf49;
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #f57c00;
+    }
+</style>
+</head>
+<body>
 
-<br>
-<br>
-<br>
-<br> Vyber co chceš udělat:
-<br> 
-<br>
-<button onclick="window.location.href='hry.html'">Zahrát si hru</button>
-<button onclick="window.location.href='socialni-site.html'">Sociální sítě</button>
-<button onclick="window.location.href='http://www.smicial.wz.cz'">Smicial</button>
+<div class="container">
+    <div class="header">
+        <h1>Vítám tě na mém webu!</h1>
+    </div>
 
-<br>
-<br>
-<br>
-<br> Na tomto webu stále pracuji 🔨
+    <div class="content">
+        <p>Ahoj, já jsem Smilos a jsem YouTuber!</p>
+        <p>Jsem majitelem sociální sítě Smicial!</p>
+    </div>
+
+    <div class="content">
+        <p>Vyber si, co chceš udělat:</p>
+        <button onclick="window.location.href='hry.html'">Zahrát si hru</button>
+        <button onclick="window.location.href='socialni-site.html'">Sociální sítě</button>
+        <button onclick="window.location.href='http://www.smicial.wz.cz'">Smicial</button>
+        <button onclick="window.location.href='kalkulacka.html'">Kalkulačka</button>
+        <br>
+        <button onclick="window.location.href='qrgenerator.html'">Generátor QR kódů</button>
+    </div>
+
+    <div class="content">
+        <p>Na tomto webu stále pracuji 🔨</p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Všechna práva vyhrazena</p>
+</div>
+
+</body>
+</html>
