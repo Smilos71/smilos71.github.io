@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulačka</title>
+<style>
+    body {
+        font-family: Segoe UI, sans-serif;
+        background-color: #f3f3f3;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .calculator {
+        width: 320px;
+        background-color: #f3f3f3;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .calculator-screen {
+        width: 100%;
+        height: 60px;
+        padding: 0 20px;
+        font-size: 24px;
+        text-align: right;
+        border: none;
+        outline: none;
+    }
+    .calculator-keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+    }
+    .calculator-key {
+        padding: 20px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        background-color: #e0e0e0;
+        transition: background-color 0.3s;
+    }
+    .calculator-key:hover {
+        background-color: #ccc;
+    }
+    .operator-key {
+        background-color: #fcbf49;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="display" class="calculator-screen" disabled>
+    <div class="calculator-keys">
+        <button class="calculator-key" onclick="clearDisplay()">C</button>
+        <button class="calculator-key" onclick="appendToDisplay('7')">7</button>
+        <button class="calculator-key" onclick="appendToDisplay('8')">8</button>
+        <button class="calculator-key" onclick="appendToDisplay('9')">9</button>
+        <button class="calculator-key operator-key" onclick="appendToDisplay('/')">÷</button>
+        <button class="calculator-key" onclick="appendToDisplay('4')">4</button>
+        <button class="calculator-key" onclick="appendToDisplay('5')">5</button>
+        <button class="calculator-key" onclick="appendToDisplay('6')">6</button>
+        <button class="calculator-key operator-key" onclick="appendToDisplay('*')">x</button>
+        <button class="calculator-key" onclick="appendToDisplay('1')">1</button>
+        <button class="calculator-key" onclick="appendToDisplay('2')">2</button>
+        <button class="calculator-key" onclick="appendToDisplay('3')">3</button>
+        <button class="calculator-key operator-key" onclick="appendToDisplay('-')">-</button>
+        <button class="calculator-key" onclick="appendToDisplay('0')">0</button>
+        <button class="calculator-key" onclick="appendToDisplay('.')">.</button>
+        <button class="calculator-key operator-key" onclick="calculate()">=</button>
+        <button class="calculator-key operator-key" onclick="appendToDisplay('+')">+</button>
+    </div>
+</div>
+
+<script>
+    function appendToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+        let result = eval(document.getElementById('display').value);
+        document.getElementById('display').value = result;
+    }
+</script>
+
+</body>
+</html>
